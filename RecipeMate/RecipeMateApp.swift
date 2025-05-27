@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct RecipeMateApp: App {
+    @State private var recipes = Recipe.sampleRecipe
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RecipeListView(recipes: $recipes)
         }
     }
 }
